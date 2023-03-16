@@ -1,0 +1,29 @@
+<div class="col-10">
+
+    <table class="table">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Navn</th>
+            <th scope="col">Løn</th>
+            <th scope="col">Slet</th>
+        </tr>
+        <tr *ngFor="let i of (tableData$ | async); let even = even" >
+            
+            <td scope="row">
+                <a [routerLink]="['/form', i.id]">
+                {{i.id}}
+                </a>
+            </td>
+            <td>
+                {{i.firstName + " "  + i.lastName}}
+            </td>
+            <td>
+                {{i.monthlyPay}}
+            </td>
+            <td>
+                <button (click)="deleteRow(i.id!)"> test</button>
+            </td>
+        </tr>
+    </table>
+    <button> <a  [routerLink]="['/form', 'new']">Create new</a></button>
+</div>

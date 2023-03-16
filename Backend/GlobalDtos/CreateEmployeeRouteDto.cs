@@ -1,6 +1,6 @@
 ﻿namespace Backend.GlobalDtos
 {
-    public class employyeRouteDto
+    public class CreateEmployeeRouteDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
