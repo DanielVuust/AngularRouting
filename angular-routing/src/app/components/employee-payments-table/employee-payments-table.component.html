@@ -10,7 +10,7 @@
         <tr *ngFor="let i of (tableData$ | async); let even = even" >
             
             <td scope="row">
-                <a [routerLink]="['/form', i.id]">
+                <a [routerLink]="[{ outlets: { form: [i.id]}}]">
                 {{i.id}}
                 </a>
             </td>

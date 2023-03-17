@@ -5,9 +5,8 @@ import { EmployeePaymentsTableComponent } from './components/employee-payments-t
 
 const routes: Routes = [
   {path: '', component: EmployeePaymentsTableComponent},
-  {path: 'table', component: EmployeePaymentsTableComponent},
-  {path: 'form/:id', component: EmployeePaymentsFormComponent},
-
+    
+  {path: ':id', component: EmployeePaymentsFormComponent, outlet:'form'},
 
 ];
 

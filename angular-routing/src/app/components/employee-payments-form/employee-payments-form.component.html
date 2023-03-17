@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <form [formGroup]="contactForm" (ngSubmit)=submit() class="col-3">
+<div style="position: absolute;left: 20%;top:20%;background-color: white; border-radius: 10px;padding:40px;box-shadow: 5px 10px 8px 10px #888888;">
+    <div >
+        <form [formGroup]="contactForm" (ngSubmit)=submit() >
             <div >
                 
                 <mat-form-field>
@@ -19,8 +19,8 @@
                     <mat-label>Monthly pay</mat-label>
                     <input matInput type="text" formControlName="monthlyPay">
                 </mat-form-field> 
-                <button type="submit" class="btn btn-danger"><a routerLink="/table">Back</a></button>
-                <button type="submit" class="btn btn-success"><a routerLink="/table">Save</a></button>
+                <button type="submit" class="btn btn-danger" (click)="clearComponent()">Back</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
     </div>

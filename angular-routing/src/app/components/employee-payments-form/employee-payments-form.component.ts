@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { EmployeePayData } from 'src/app/interfaces/employee-pay-data';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HandleEmployeePaymentsService } from 'src/app/services/handle-employee-payments.service';
 import { FormBuilder } from '@angular/forms'
 
@@ -16,7 +14,7 @@ export class EmployeePaymentsFormComponent {
   private sub: any;
 
   contactForm: FormGroup;
-  constructor(private route: ActivatedRoute, private service: HandleEmployeePaymentsService, private formBuilder: FormBuilder) {
+  constructor(private route: ActivatedRoute, private service: HandleEmployeePaymentsService, private formBuilder: FormBuilder,private router:Router) {
     this.contactForm = this.formBuilder.group({
       id: new FormControl('', ),
       firstName: new FormControl('', [Validators.required, ]),
@@ -56,5 +54,8 @@ export class EmployeePaymentsFormComponent {
     } else {
       console.error("Form is invalid!");
     }
+  }
+  clearComponent(){
+    this.router.navigate([{ outlets: { form: null}}]);
   }
 }
